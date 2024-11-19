@@ -1,0 +1,53 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : DLX
+Version: S-2021.06-SP4
+Date   : Sat Jul  6 03:00:24 2024
+****************************************
+
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/mariagrazia.graziano/do/libnangate/NangateOpenCellLibrary_typical_ecsm.db)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+DLX                    5K_hvratio_1_4    NangateOpenCellLibrary
+
+
+Global Operating Voltage = 1.1  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 169.6808 mW   (96%)
+  Net Switching Power  =   6.7843 mW    (4%)
+                         ---------
+Total Dynamic Power    = 176.4650 mW  (100%)
+
+Cell Leakage Power     =   6.7574 mW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register       1.6779e+05          182.6642        2.7074e+06        1.7067e+05  (  93.15%)
+sequential        33.4451            3.3204        1.0865e+04           47.6300  (   0.03%)
+combinational  1.8750e+03        6.5980e+03        4.0391e+06        1.2511e+04  (   6.83%)
+--------------------------------------------------------------------------------------------------
+Total          1.6970e+05 uW     6.7840e+03 uW     6.7574e+06 nW     1.8323e+05 uW
+1

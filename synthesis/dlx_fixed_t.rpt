@@ -1,0 +1,78 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'DLX' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DLX
+Version: S-2021.06-SP4
+Date   : Sat Jul  6 02:29:41 2024
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: DATAPATH/REORDER_BUFFER/CLK_r_REG30097_S60
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: DATAPATH/BPU/CLK_r_REG13636_S17
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  DLX                5K_hvratio_1_4        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  DATAPATH/REORDER_BUFFER/CLK_r_REG30097_S60/CK (DFFS_X1)
+                                                          0.00 #     0.00 r
+  DATAPATH/REORDER_BUFFER/CLK_r_REG30097_S60/Q (DFFS_X1)
+                                                          0.09       0.09 f
+  DATAPATH/REORDER_BUFFER/U2816/ZN (AND2_X1)              0.05       0.14 f
+  DATAPATH/REORDER_BUFFER/U1042/ZN (AND2_X2)              0.05       0.19 f
+  DATAPATH/REORDER_BUFFER/U293/ZN (AND2_X1)               0.04       0.23 f
+  DATAPATH/REORDER_BUFFER/U185/ZN (NOR2_X1)               0.04       0.27 r
+  DATAPATH/REORDER_BUFFER/U29563/ZN (AND4_X1)             0.06       0.32 r
+  DATAPATH/REORDER_BUFFER/U29582/ZN (AND4_X1)             0.06       0.38 r
+  DATAPATH/REORDER_BUFFER/U29648/ZN (AOI22_X1)            0.03       0.42 f
+  DATAPATH/REORDER_BUFFER/U29649/ZN (OR3_X2)              0.09       0.51 f
+  DATAPATH/REORDER_BUFFER/U29650/Z (XOR2_X1)              0.07       0.58 f
+  DATAPATH/REORDER_BUFFER/U31598/ZN (AND2_X2)             0.05       0.63 f
+  DATAPATH/REORDER_BUFFER/is_mispredicted (ROB)           0.00       0.63 f
+  DATAPATH/U3799/Z (BUF_X1)                               0.06       0.69 f
+  DATAPATH/U900/Z (BUF_X1)                                0.04       0.74 f
+  DATAPATH/U5303/Z (MUX2_X1)                              0.08       0.81 r
+  DATAPATH/BPU/jmp_addr[6] (BTB)                          0.00       0.81 r
+  DATAPATH/BPU/U17991/ZN (INV_X1)                         0.03       0.84 f
+  DATAPATH/BPU/U8234/ZN (AND2_X1)                         0.04       0.88 f
+  DATAPATH/BPU/U899/ZN (AND2_X1)                          0.04       0.92 f
+  DATAPATH/BPU/U18255/ZN (NAND2_X1)                       0.03       0.95 r
+  DATAPATH/BPU/U14224/ZN (AND2_X2)                        0.05       1.01 r
+  DATAPATH/BPU/U1000/ZN (INV_X2)                          0.06       1.07 f
+  DATAPATH/BPU/U1742/ZN (AND2_X1)                         0.07       1.13 f
+  DATAPATH/BPU/U36270/ZN (INV_X2)                         0.13       1.26 r
+  DATAPATH/BPU/U15773/ZN (NOR2_X1)                        0.05       1.31 f
+  DATAPATH/BPU/U42900/ZN (OR2_X1)                         0.06       1.37 f
+  DATAPATH/BPU/CLK_r_REG13636_S17/D (DFF_X1)              0.01       1.38 f
+  data arrival time                                                  1.38
+
+  clock CLK (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  DATAPATH/BPU/CLK_r_REG13636_S17/CK (DFF_X1)             0.00       1.00 r
+  library setup time                                     -0.04       0.96
+  data required time                                                 0.96
+  --------------------------------------------------------------------------
+  data required time                                                 0.96
+  data arrival time                                                 -1.38
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.42
+
+
+1

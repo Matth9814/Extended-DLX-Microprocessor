@@ -1,0 +1,23 @@
+
+# elaborating lower entities
+elaborate LOGICALS -architecture BEHAVIORAL2
+
+# elaborating the top entity 
+elaborate DLX -architecture STRUCTURAL -library WORK
+
+set_wire_load_model -name 5K_hvratio_1_4
+
+# Create clock and set constraints
+create_clock -name "CLK" -period 1.0 clk
+set_max_delay 1.0 -from [all_inputs] -to [all_outputs]
+
+# optimize + mapping
+compile_ultra -timing_high_effort_script
+# registers (edge and level triggered) retiming + incremental compilation 
+optimize_registers -sync_trans multiclass -async_trans multiclass
+
+report_timing > dlx_fixed_t.rpt
+report_area > dlx_fixed_a.rpt
+write -hierarchy -format ddc -output DLX-fixed.ddc
+write -hierarchy -format vhdl -output DLX-fixed.vhdl
+write -hierarchy -format verilog -output DLX-fixed.v
